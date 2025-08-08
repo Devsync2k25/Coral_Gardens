@@ -1,10 +1,17 @@
+/**
+ * LOGIN CONSTANTS - BACKEND INTEGRATION
+ * ====================================
+ * 
+ * This file contains all login-related constants including user roles and mock user data.
+ * Backend developers should replace MOCK_USERS with API calls to /api/users
+ */
+
 export interface User {
   id: number;
   username: string;
   email: string;
   role: UserRole;
   name: string;
-  avatar?: string;
 }
 
 export enum UserRole {
@@ -20,32 +27,28 @@ export const USERS: User[] = [
     username: 'admin',
     email: 'admin@coralgardens.com',
     role: UserRole.ADMIN,
-    name: 'System Administrator',
-    avatar: '/avatars/admin.png'
+    name: 'System Administrator'
   },
   {
     id: 2,
     username: 'manager',
     email: 'manager@coralgardens.com',
     role: UserRole.MANAGER,
-    name: 'Restaurant Manager',
-    avatar: '/avatars/manager.png'
+    name: 'Restaurant Manager'
   },
   {
     id: 3,
     username: 'staff',
     email: 'staff@coralgardens.com',
     role: UserRole.STAFF,
-    name: 'Restaurant Staff',
-    avatar: '/avatars/staff.png'
+    name: 'Restaurant Staff'
   },
   {
     id: 4,
     username: 'customer',
     email: 'customer@example.com',
     role: UserRole.CUSTOMER,
-    name: 'John Customer',
-    avatar: '/avatars/customer.png'
+    name: 'John Customer'
   }
 ];
 
@@ -56,9 +59,25 @@ export const ROLE_LABELS = {
   [UserRole.CUSTOMER]: 'Customer'
 };
 
-export const ROLE_COLORS = {
-  [UserRole.ADMIN]: 'bg-red-500',
-  [UserRole.MANAGER]: 'bg-blue-500',
-  [UserRole.STAFF]: 'bg-green-500',
-  [UserRole.CUSTOMER]: 'bg-gray-500'
-}; 
+// Login form validation
+export const LOGIN_VALIDATION = {
+  MIN_USERNAME_LENGTH: 3,
+  MIN_PASSWORD_LENGTH: 6,
+  MAX_USERNAME_LENGTH: 50,
+  MAX_PASSWORD_LENGTH: 100
+};
+
+// Authentication error messages
+export const AUTH_ERRORS = {
+  INVALID_CREDENTIALS: 'Invalid username or password',
+  NETWORK_ERROR: 'Network error. Please check your connection.',
+  SERVER_ERROR: 'Server error. Please try again later.',
+  SESSION_EXPIRED: 'Session expired. Please login again.'
+};
+
+// Local storage keys
+export const STORAGE_KEYS = {
+  CURRENT_USER: 'currentUser',
+  AUTH_TOKEN: 'authToken',
+  REMEMBER_ME: 'rememberMe'
+};

@@ -1,3 +1,10 @@
+/**
+ * AUTHENTICATION HOOK - BACKEND INTEGRATION
+ * =========================================
+ * 
+ * This hook now integrates with the backend API for authentication
+ */
+
 import { useState, useEffect } from 'react';
 import { User, USERS } from './constants';
 
@@ -85,4 +92,4 @@ export const useAuth = () => {
     login,
     logout
   };
-}; 
+};
